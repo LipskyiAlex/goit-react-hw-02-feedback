@@ -15,10 +15,12 @@ class App extends React.Component {
     visibilityMesssage: true,
   };
 
-  handleGood = () => {
+  handleClick = (property) => {
+      
+   
     this.setState(
       prevState => ({
-        good: prevState.good + 1,
+        [property]: prevState[property] + 1,
         total: Math.round(prevState.total + 1),
       }),
       () => {
@@ -27,29 +29,6 @@ class App extends React.Component {
     );
   };
 
-  handleNeutral = () => {
-    this.setState(
-      prevState => ({
-        neutral: prevState.neutral + 1,
-        total: Math.round(prevState.total + 1),
-      }),
-      () => {
-        this.countPositivePercentage();
-      }
-    );
-  };
-
-  handleBad = () => {
-    this.setState(
-      prevState => ({
-        bad: prevState.bad + 1,
-        total: Math.round(prevState.total + 1),
-      }),
-      () => {
-        this.countPositivePercentage();
-      }
-    );
-  };
 
   countPositivePercentage = () => {
     this.setState(prevState => ({
@@ -69,9 +48,7 @@ class App extends React.Component {
       <div>
         <Section>
           <FeedbackOptions
-            onGood={this.handleGood}
-            onNeutral={this.handleNeutral}
-            onBad={this.handleBad}
+            onGood={this.handleClick}
             onShow={this.show}
           />
              <Statistics 
