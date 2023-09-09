@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Section from './sectionTitle';
+import Section from './SectionTitle/sectionTitle';
 import FeedbackOptions from './statistics/controls';
 import Statistics from './statistics/statistics';
 
@@ -14,6 +14,7 @@ class App extends React.Component {
     visbilityStat: false,
     visibilityMesssage: true,
   };
+
 
   handleClick = (property) => {
       
