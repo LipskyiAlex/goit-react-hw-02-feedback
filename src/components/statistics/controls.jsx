@@ -1,37 +1,20 @@
 import React from "react";
 
-const FeedbackOptions = ({onGood,onNeutral,onBad,onShow}) => {
+const FeedbackOptions = ({onClick,onShow}) => {
 
       const handleClick = (e) => {
 
         onShow();
-             
-        switch(e.target.textContent) {
-
-          case "Good": 
-          onGood();
-          break;
-
-          case "Neutral":
-            onNeutral();
-            break;
-          
-            case "Bad":
-            onBad();
-            break;
-
-            default:
-                
-        }
-          
+        onClick(e.target.dataset.property);
+                  
       }
   
      return (
     <div className="button-wrapper">
       
-    <button type="button" onClick={handleClick}>Good</button>
-    <button type="button" onClick={handleClick}>Neutral</button>
-    <button type="button" onClick={handleClick}>Bad</button>
+    <button type="button" onClick={handleClick} data-property="good">Good</button>
+    <button type="button" onClick={handleClick} data-property="neutral">Neutral</button>
+    <button type="button" onClick={handleClick} data-property="bad">Bad</button>
     </div>
 
 )
