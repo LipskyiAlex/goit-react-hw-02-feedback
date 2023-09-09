@@ -1,8 +1,9 @@
 import React from 'react';
 
-import Section from './SectionTitle/sectionTitle';
-import FeedbackOptions from './statistics/controls';
+import Section from './sectionTitle/section';
+import FeedbackOptions from './sectionTitle/controls/controls';
 import Statistics from './statistics/statistics';
+import {Wrapper} from './App.styled';
 
 class App extends React.Component {
   state = {
@@ -46,10 +47,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <Wrapper>
         <Section>
           <FeedbackOptions
-            onGood={this.handleClick}
+            onClick={this.handleClick}
             onShow={this.show}
           />
              <Statistics 
@@ -62,7 +63,7 @@ class App extends React.Component {
          visbilityStat = {this.state.visbilityStat}        
        />
         </Section>
-      </div>
+      </Wrapper>
     );
   }
 }

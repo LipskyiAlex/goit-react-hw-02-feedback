@@ -1,6 +1,6 @@
 import React from 'react';
 
-import IsEmptyNotification from '../notification/notification';
+import IsEmptyNotification from '../sectionTitle/notification/notification';
 
 const Statistics = ({
   good,
