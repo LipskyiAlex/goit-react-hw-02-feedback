@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {List,Title} from './statistics.styled';
 import IsEmptyNotification from '../sectionTitle/notification/notification';
 
 const Statistics = ({
@@ -13,10 +14,10 @@ const Statistics = ({
 }) => {
   return (
     <div>
-      <h2>Statistics</h2>
+      <Title>Statistics</Title>
       {visibilityMessage && <IsEmptyNotification />}
       {visbilityStat && (
-        <ul>
+        <List>
           <li>
             Good: <span>{good}</span>
           </li>
@@ -32,7 +33,7 @@ const Statistics = ({
           <li>
             Positive feedback: <span>{Math.round(percentage)}%</span>
           </li>
-        </ul>
+        </List>
       )}
     </div>
   );

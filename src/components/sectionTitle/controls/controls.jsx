@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import {Button} from './controls.styled';
+import {Button,ButttonWrapper} from './controls.styled';
 const FeedbackOptions = ({onClick,onShow}) => {
 
       const handleClick = (e) => {
@@ -11,12 +11,12 @@ const FeedbackOptions = ({onClick,onShow}) => {
       }
   
      return (
-    <div className="button-wrapper">
+    <ButttonWrapper className="button-wrapper">
       
     <Button type="button" onClick={handleClick} data-property="good">Good</Button>
     <Button type="button" onClick={handleClick} data-property="neutral">Neutral</Button>
     <Button type="button" onClick={handleClick} data-property="bad">Bad</Button>
-    </div>
+    </ButttonWrapper>
  
 )
 }

@@ -1,8 +1,14 @@
 import styled from "@emotion/styled";
-import { css } from '@emotion/react'
+
+export const ButttonWrapper = styled.div `
+
+display:flex;
+justify-content: space-around;
+
+`
 
 export const Button = styled.button `
-
+  
   background-color: #c2fbd7;
   border-radius: 100px;
   box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
@@ -17,7 +23,6 @@ export const Button = styled.button `
   border: 0;
   font-size: 16px;
   user-select: none;
-  -webkit-user-select: none;
   touch-action: manipulation;
 
 
