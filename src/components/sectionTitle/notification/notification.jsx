@@ -1,10 +1,12 @@
+import {Notification} from './notification.styled';
+
 
 
 const IsEmptyNotification = () => {
 
     return (
        
-         <p>There is no feedback</p>    
+         <Notification>There is no feedback</Notification>    
     )
 }
 
