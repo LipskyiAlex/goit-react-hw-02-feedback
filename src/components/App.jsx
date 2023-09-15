@@ -3,6 +3,7 @@ import React from 'react';
 import Section from './sectionTitle/section';
 import FeedbackOptions from './sectionTitle/controls/feedbackOptions';
 import Statistics from './statistics/statistics';
+import IsEmptyNotification from './sectionTitle/notification/notification'
 import {Wrapper} from './App.styled';
 
 class App extends React.Component {
@@ -10,25 +11,16 @@ class App extends React.Component {
     good: 0,
     neutral: 0,
     bad: 0,
-    visbilityStat: false,
-    visibilityMesssage: true,
   };
 
 
-  handleClick = (property) => {
-    
+  handleClick = (option) => {
+  
     this.setState(
       prevState => ({
-        [property]: prevState[property] + 1,
+        [option]: prevState[option] + 1,
       })
     );
-  };
-
-  show = () => {
-    this.setState({
-      visbilityStat: true,
-      visibilityMesssage: false,
-    });
   };
 
   render() {
@@ -41,17 +33,15 @@ class App extends React.Component {
         <Section>
           <FeedbackOptions
             onClick={this.handleClick}
-            onShow={this.show}
+            options={Object.keys(this.state)}
           />
              <Statistics 
          good={good}
          neutral={neutral}
          bad={bad}
          total={total}
-         positivePercentage={positivePercentage}  
-         visibilityMessage={this.state.visibilityMesssage}
-         visbilityStat = {this.state.visbilityStat}        
-       />
+         positivePercentage={positivePercentage}     
+       /> {total===0 && <IsEmptyNotification/>}
         </Section>
       </Wrapper>
     );

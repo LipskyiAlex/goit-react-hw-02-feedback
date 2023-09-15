@@ -1,38 +1,34 @@
 import React from 'react';
 
-import {List,Title} from './statistics.styled';
-import IsEmptyNotification from '../sectionTitle/notification/notification';
-
+import {List,Title,Item} from './statistics.styled';
 const Statistics = ({
   good,
   neutral,
   bad,
   total,
   positivePercentage,
-  visibilityMessage,
-  visbilityStat
 }) => {
   return (
+       
     <div>
       <Title>Statistics</Title>
-      {visibilityMessage && <IsEmptyNotification />}
-      {visbilityStat && (
+      {total!==0 && (
         <List>
-          <li>
+          <Item>
             Good: <span>{good}</span>
-          </li>
-          <li>
+          </Item>
+          <Item>
             Neutral: <span>{neutral}</span>
-          </li>
-          <li>
+          </Item>
+          <Item>
             Bad: <span>{bad}</span>
-          </li>
-          <li>
+          </Item>
+          <Item>
             Total: <span>{total}</span>
-          </li>
-          <li>
+          </Item>
+          <Item>
             Positive feedback: <span>{Math.round(positivePercentage)}%</span>
-          </li>
+          </Item>
         </List>
       )}
     </div>
