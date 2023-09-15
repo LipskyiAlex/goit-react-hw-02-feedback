@@ -8,7 +8,7 @@ const Statistics = ({
   neutral,
   bad,
   total,
-  percentage,
+  positivePercentage,
   visibilityMessage,
   visbilityStat
 }) => {
@@ -31,7 +31,7 @@ const Statistics = ({
             Total: <span>{total}</span>
           </li>
           <li>
-            Positive feedback: <span>{Math.round(percentage)}%</span>
+            Positive feedback: <span>{Math.round(positivePercentage)}%</span>
           </li>
         </List>
       )}

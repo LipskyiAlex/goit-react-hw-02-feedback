@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Section from './sectionTitle/section';
-import FeedbackOptions from './sectionTitle/controls/controls';
+import FeedbackOptions from './sectionTitle/controls/feedbackOptions';
 import Statistics from './statistics/statistics';
 import {Wrapper} from './App.styled';
 
@@ -10,32 +10,18 @@ class App extends React.Component {
     good: 0,
     neutral: 0,
     bad: 0,
-    total: 0,
-    positivePercentage: 0,
     visbilityStat: false,
     visibilityMesssage: true,
   };
 
 
   handleClick = (property) => {
-      
-   
+    
     this.setState(
       prevState => ({
         [property]: prevState[property] + 1,
-        total: Math.round(prevState.total + 1),
-      }),
-      () => {
-        this.countPositivePercentage();
-      }
+      })
     );
-  };
-
-
-  countPositivePercentage = () => {
-    this.setState(prevState => ({
-      positivePercentage: (prevState.good / prevState.total) * 100,
-    }));
   };
 
   show = () => {
@@ -46,6 +32,10 @@ class App extends React.Component {
   };
 
   render() {
+
+     const {good,neutral,bad} = this.state;
+     const total = good+neutral+bad;
+     const positivePercentage = (good/total)*100;
     return (
       <Wrapper>
         <Section>
@@ -54,11 +44,11 @@ class App extends React.Component {
             onShow={this.show}
           />
              <Statistics 
-         good={this.state.good}
-         neutral={this.state.neutral}
-         bad={this.state.bad}
-         total={this.state.total}
-         percentage={this.state.positivePercentage}  
+         good={good}
+         neutral={neutral}
+         bad={bad}
+         total={total}
+         positivePercentage={positivePercentage}  
          visibilityMessage={this.state.visibilityMesssage}
          visbilityStat = {this.state.visbilityStat}        
        />
