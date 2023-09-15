@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {List,Title} from './statistics.styled';
+import {List,Title,Item} from './statistics.styled';
 const Statistics = ({
   good,
   neutral,
@@ -14,21 +14,21 @@ const Statistics = ({
       <Title>Statistics</Title>
       {total!==0 && (
         <List>
-          <li>
+          <Item>
             Good: <span>{good}</span>
-          </li>
-          <li>
+          </Item>
+          <Item>
             Neutral: <span>{neutral}</span>
-          </li>
-          <li>
+          </Item>
+          <Item>
             Bad: <span>{bad}</span>
-          </li>
-          <li>
+          </Item>
+          <Item>
             Total: <span>{total}</span>
-          </li>
-          <li>
+          </Item>
+          <Item>
             Positive feedback: <span>{Math.round(positivePercentage)}%</span>
-          </li>
+          </Item>
         </List>
       )}
     </div>
