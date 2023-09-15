@@ -1,22 +1,18 @@
 import React from 'react';
 
 import {List,Title} from './statistics.styled';
-import IsEmptyNotification from '../sectionTitle/notification/notification';
-
 const Statistics = ({
   good,
   neutral,
   bad,
   total,
   positivePercentage,
-  visibilityMessage,
-  visbilityStat
 }) => {
   return (
+       
     <div>
       <Title>Statistics</Title>
-      {visibilityMessage && <IsEmptyNotification />}
-      {visbilityStat && (
+      {total!==0 && (
         <List>
           <li>
             Good: <span>{good}</span>
