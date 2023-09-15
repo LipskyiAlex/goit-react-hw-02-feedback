@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import {Button,ButttonWrapper} from './controls.styled';
+import {Button,ButttonWrapper} from './feedbackOptions.styled';
 const FeedbackOptions = ({onClick,onShow}) => {
 
       const handleClick = (e) => {
